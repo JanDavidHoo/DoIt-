@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func plusTapped(_ sender: Any) {
+        performSegue(withIdentifier: "addSegue", sender: nil)
+    }
     var tasks : [Task] = []
     
     override func viewDidLoad() {
@@ -32,7 +35,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
-        cell.textLabel?.text = task.name
+        if task.important == true {
+             cell.textLabel?.text = "❗️\(task.name)"
+        } else {
+             cell.textLabel?.text = task.name
+        }
+       
         return cell
         
     }
