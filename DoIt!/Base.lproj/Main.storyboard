@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialBold.ttf">
+            <string>Arial-BoldMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Do It!-->
         <scene sceneID="tne-QT-ifu">
@@ -18,12 +23,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-CD-Aws">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-CD-Aws">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JKs-CD-Aws" secondAttribute="trailing" id="07q-G7-hH3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JKs-CD-Aws" secondAttribute="bottom" id="VDM-72-cP8"/>
@@ -34,6 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Do It!" id="cM0-mn-dcM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="w6j-mu-EUz"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rng-rN-Tug">
                             <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -50,20 +59,74 @@
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="Zv7-pz-MKP">
             <objects>
-                <viewController id="viA-Th-wsV" sceneMemberID="viewController">
+                <viewController id="viA-Th-wsV" customClass="CreateTaskViewController" customModule="DoIt_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ls1-pK-2Tn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-B6-4Nn">
+                                <rect key="frame" x="101" y="111" width="172" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-B0-Rbm">
+                                <rect key="frame" x="95" y="258" width="185" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-qX-cbj">
+                                <rect key="frame" x="87" y="179" width="200" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="tGE-yP-fhb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dej-lo-NSR">
+                                <rect key="frame" x="163" y="328" width="51" height="31"/>
+                                <color key="onTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh9-zI-dHD">
+                                <rect key="frame" x="151" y="393" width="72" height="57"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <state key="normal" title="add">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskBut:" destination="viA-Th-wsV" eventType="touchUpInside" id="gma-ja-M8i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lQo-B6-4Nn" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="02M-5i-ZJN"/>
+                            <constraint firstItem="Dej-lo-NSR" firstAttribute="top" secondItem="2vw-B0-Rbm" secondAttribute="bottom" constant="25" id="07x-fC-NBw"/>
+                            <constraint firstItem="HGL-qX-cbj" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="E8Y-oW-bCs"/>
+                            <constraint firstItem="Dej-lo-NSR" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="Gcd-G6-NT1"/>
+                            <constraint firstItem="lQo-B6-4Nn" firstAttribute="centerY" secondItem="ls1-pK-2Tn" secondAttribute="centerY" constant="-200" id="I2u-oa-5Dy"/>
+                            <constraint firstItem="xh9-zI-dHD" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="QOR-Ae-HCY"/>
+                            <constraint firstItem="2vw-B0-Rbm" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="Rnv-Mb-W3R"/>
+                            <constraint firstItem="xh9-zI-dHD" firstAttribute="top" secondItem="Dej-lo-NSR" secondAttribute="bottom" constant="34" id="doi-Wj-LMM"/>
+                            <constraint firstItem="xh9-zI-dHD" firstAttribute="centerX" secondItem="ls1-pK-2Tn" secondAttribute="centerX" id="e5Q-Ke-aN1"/>
+                            <constraint firstItem="2vw-B0-Rbm" firstAttribute="top" secondItem="HGL-qX-cbj" secondAttribute="bottom" constant="30" id="eds-Rt-4q5"/>
+                            <constraint firstItem="HGL-qX-cbj" firstAttribute="top" secondItem="lQo-B6-4Nn" secondAttribute="bottom" constant="23" id="lJM-NS-Tht"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MCh-iS-4dV"/>
                     </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="Dej-lo-NSR" id="f3F-cp-XXC"/>
+                        <outlet property="taskNameTextField" destination="HGL-qX-cbj" id="GWs-mu-k3P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Au-XX-SBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="133"/>
+            <point key="canvasLocation" x="1160.8" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w85-mk-Eof">
