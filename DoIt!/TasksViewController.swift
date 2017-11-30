@@ -18,9 +18,13 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! CreateTaskViewController
-        nextVC.previousVC = self
-        
+        if segue.identifier == "addSegue" {
+            let nextVC = segue.destination as! CreateTaskViewController
+            nextVC.previousVC = self
+        }
+        if segue.identifier == "reminderSegue" {
+            
+        }
     }
     var tasks : [Task] = []
     
@@ -49,6 +53,10 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
        
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "reminderSegue", sender: nil)
     }
     
     func makeTasks() -> [Task] {

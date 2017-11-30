@@ -53,23 +53,51 @@
                     <connections>
                         <outlet property="tableView" destination="JKs-CD-Aws" id="MDt-Sy-Y8Z"/>
                         <segue destination="viA-Th-wsV" kind="show" identifier="addSegue" id="BRm-GC-eCO"/>
-                        <segue destination="k0q-d7-91N" kind="show" id="ML4-Vt-JYD"/>
+                        <segue destination="k0q-d7-91N" kind="show" identifier="reminderSegue" id="ML4-Vt-JYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Reminder View Controller-->
         <scene sceneID="OwD-6f-7Xy">
             <objects>
-                <viewController id="k0q-d7-91N" sceneMemberID="viewController">
+                <viewController id="k0q-d7-91N" customClass="ReminderViewController" customModule="DoIt_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ibj-yH-uhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H33-63-kw8">
+                                <rect key="frame" x="129.5" y="358" width="116" height="57"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <state key="normal" title="delete">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskBut:" destination="viA-Th-wsV" eventType="touchUpInside" id="ofl-An-X26"/>
+                                    <action selector="deleteTapped:" destination="k0q-d7-91N" eventType="touchUpInside" id="wL6-6q-jtt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-7p-bvh">
+                                <rect key="frame" x="101" y="311" width="172" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66660718119999995" blue="0.50770768440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SIi-7p-bvh" firstAttribute="centerX" secondItem="ibj-yH-uhp" secondAttribute="centerX" id="38d-rx-nqD"/>
+                            <constraint firstItem="H33-63-kw8" firstAttribute="top" secondItem="SIi-7p-bvh" secondAttribute="bottom" constant="2" id="MjK-Cj-TLQ"/>
+                            <constraint firstItem="SIi-7p-bvh" firstAttribute="centerY" secondItem="ibj-yH-uhp" secondAttribute="centerY" id="SSR-V2-ho6"/>
+                            <constraint firstItem="H33-63-kw8" firstAttribute="centerX" secondItem="ibj-yH-uhp" secondAttribute="centerX" id="ctI-CW-Kgu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6WX-jp-w6r"/>
                     </view>
+                    <connections>
+                        <outlet property="reminderLabel" destination="SIi-7p-bvh" id="zeL-rh-OUd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-8h-Qdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
