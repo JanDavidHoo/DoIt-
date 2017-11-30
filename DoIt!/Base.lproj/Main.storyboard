@@ -18,7 +18,7 @@
         <!--Do It!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="DoIt_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="DoIt_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,11 +53,27 @@
                     <connections>
                         <outlet property="tableView" destination="JKs-CD-Aws" id="MDt-Sy-Y8Z"/>
                         <segue destination="viA-Th-wsV" kind="show" identifier="addSegue" id="BRm-GC-eCO"/>
+                        <segue destination="k0q-d7-91N" kind="show" id="ML4-Vt-JYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OwD-6f-7Xy">
+            <objects>
+                <viewController id="k0q-d7-91N" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibj-yH-uhp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6WX-jp-w6r"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgP-8h-Qdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="841"/>
         </scene>
         <!--Create Task View Controller-->
         <scene sceneID="Zv7-pz-MKP">
