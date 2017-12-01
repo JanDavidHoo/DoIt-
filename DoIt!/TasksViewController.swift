@@ -56,7 +56,9 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "reminderSegue", sender: nil)
+        let task = tasks[indexPath.row]
+        performSegue(withIdentifier: "reminderSegue", sender: task)
+        print(task)
     }
     
     func makeTasks() -> [Task] {
